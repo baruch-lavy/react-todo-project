@@ -1,13 +1,9 @@
-export function Todo({ todo, setState }) {
+import { useContext } from "react";
+import { TodosContext } from "../context/TodosContext";
 
-    function removeTodo(id) {
-        setState(prev => {
-            return {...prev, todos: prev.todos.filter(todo => {
-                return todo.id !== id
-            })}
-        })
-    }
+export function Todo({ todo }) {
 
+    const { removeTodo } = useContext(TodosContext)
 
   return (
     <section className={`todo ${todo.priority}`}>
