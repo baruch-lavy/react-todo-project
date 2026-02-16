@@ -1,12 +1,15 @@
 import { Index } from "./pages/Index";
 import { TodosProvider } from "./context/TodosContext";
-import { SystemProvider } from "./context/ThemeContext";
+import { SystemProvider } from "./context/SystemContext";
+import { PostsProvider } from "./context/PostsContext";
 
 function App() {
   return (
     <SystemProvider>
       <TodosProvider>
-        <Index />
+        <PostsProvider>
+          <Index />
+        </PostsProvider>
       </TodosProvider>
     </SystemProvider>
   );

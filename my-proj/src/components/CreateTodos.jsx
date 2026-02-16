@@ -1,10 +1,10 @@
 import { useContext, useRef, useState } from "react";
 import { TodosContext } from "../context/TodosContext";
-import { SystemContext } from "../context/ThemeContext";
+import { SystemContext } from "../context/SystemContext";
 
 export function CreateTodos() {
   const { addTodo } = useContext(TodosContext);
-  const { isDarkMode } = useContext(SystemContext)
+  const { isDarkMode } = useContext(SystemContext);
 
   const todoId = useRef(1);
   const titleValue = useRef("");
@@ -59,10 +59,10 @@ export function CreateTodos() {
       <select
         name="priority"
         id="priority"
-        value={todo.priority || ''}
+        value={todo.priority || ""}
         onChange={handleChange}
       >
-        <option value='' disabled>
+        <option value="" disabled>
           --Choose Priority--
         </option>
         <option value="low">Low</option>
