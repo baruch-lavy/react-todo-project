@@ -1,0 +1,39 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    background: #ffffff;
+    padding: 1rem;
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .right-side {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        span {
+            font-weight: 600;
+        }
+
+        button {
+           padding: 0.6rem; 
+           font-weight: 600;
+           background: #6c63ff;
+           color: white;
+           border-radius: 5px;
+           border: none;
+           cursor: pointer;
+        }
+    }
+}
+
+header.dark {
+    background: #16213e;
+    color: azure;
+}

@@ -1,0 +1,52 @@
+.todo {
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    gap: 300px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .priority {
+        text-transform: uppercase;
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+
+    button {
+        background: red;
+        border: none;
+        border-radius: 8px;
+        padding: 0.8rem 1rem;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+}
+
+.todo.low {
+    border-left: 5px solid green;
+
+    .priority{
+        background: lightgreen;
+    }
+}
+.todo.medium {
+    border-left: 5px solid #ff9800;
+    .priority{
+        background: #e49b2e;
+    }
+}
+.todo.important {
+    border-left: 5px solid red;
+    .priority{
+        background: lightcoral;
+    }
+}
