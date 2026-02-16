@@ -22,4 +22,8 @@
       color: blue;
     }
   }
+
+  .no-todos {
+    color: white;
+  }
 }

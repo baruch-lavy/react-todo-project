@@ -1,8 +1,10 @@
 import { useContext, useRef, useState } from "react";
-import { TodosContext } from "../pages/Index";
+import { TodosContext } from "../context/TodosContext";
+import { SystemContext } from "../context/ThemeContext";
 
-export function CreateTodos({ setState }) {
-  const { isDarkMode } = useContext(TodosContext);
+export function CreateTodos() {
+  const { addTodo } = useContext(TodosContext);
+  const { isDarkMode } = useContext(SystemContext)
 
   const todoId = useRef(1);
   const titleValue = useRef("");
@@ -25,9 +27,7 @@ export function CreateTodos({ setState }) {
   function handleSubmit(ev) {
     ev.preventDefault();
     if (todo.title && todo.priority) {
-      setState((prev) => {
-        return { ...prev, todos: [...prev.todos, todo] };
-      });
+      addTodo(todo);
     }
 
     todoId.current += 1;

@@ -1,15 +1,10 @@
 import { useContext } from "react";
-import { TodosContext } from "../pages/Index";
+import { TodosContext } from "../context/TodosContext";
+import { SystemContext } from "../context/ThemeContext";
 
-export function Header({ setState }) {
+export function Header() {
     const { todos } = useContext(TodosContext);
-    const { isDarkMode } = useContext(TodosContext)
-
-    function toggleTheme() {
-        setState(prev => {
-            return {...prev, isDarkMode: !prev.isDarkMode}
-        })
-    }
+    const { isDarkMode, toggleTheme } = useContext(SystemContext)
 
   return (
     <header className={isDarkMode ? 'dark' : 'light'}>
