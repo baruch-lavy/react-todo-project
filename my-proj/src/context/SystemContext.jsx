@@ -4,6 +4,7 @@ export const SystemContext = createContext(null);
 export function SystemProvider({ children }) {
   const [state, setState] = useState({
     isDarkMode: false,
+    isPostsPage: false,
   });
 
 
@@ -13,8 +14,14 @@ export function SystemProvider({ children }) {
     });
   }
 
+  function togglePages() {
+    setState((prev) => {
+      return { ...prev, isPostsPage: !prev.isPostsPage };
+    });
+  }
+
   return (
-    <SystemContext.Provider value={{ ...state, toggleTheme }}>
+    <SystemContext.Provider value={{ ...state, toggleTheme, togglePages }}>
       {children}
     </SystemContext.Provider>
   );

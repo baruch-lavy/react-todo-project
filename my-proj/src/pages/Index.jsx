@@ -1,14 +1,21 @@
 import { Header } from "../components/Header";
 import { CreateTodos } from "../components/CreateTodos";
 import { Todo } from "../components/Todo";
+import { Posts } from "./Posts";
 
 import { useContext } from "react";
 import { TodosContext } from "../context/TodosContext";
-import { SystemContext } from "../context/ThemeContext";
+import { SystemContext } from "../context/SystemContext";
 
 export function Index() {
   const { todos } = useContext(TodosContext);
-  const { isDarkMode } = useContext(SystemContext)
+  const { isDarkMode, isPostsPage } = useContext(SystemContext)
+
+  if(isPostsPage) {
+    return (
+        <Posts/>
+    )
+  }
 
   return (
     <div className={`main-container ${isDarkMode ? "dark" : "light"}`}>

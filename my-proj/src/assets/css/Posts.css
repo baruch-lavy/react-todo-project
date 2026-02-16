@@ -1,0 +1,42 @@
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.loader{
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid rgb(192, 184, 184);
+    border-radius: 50%;
+    border-top: 2px solid black;
+    animation: spin 2s linear infinite;
+}
+
+.post {
+    border: 1px solid pink;
+    padding: 1rem;
+    margin-bottom: 0.4rem;
+    border-radius: 8px;
+    border-left: 3px solid plum;
+
+    span {
+        text-align: center;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+}
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* Starting angle */
+  }
+  to {
+    transform: rotate(360deg); /* Ending angle, a full circle */
+  }
+}
+
