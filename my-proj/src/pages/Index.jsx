@@ -3,12 +3,13 @@ import { CreateTodos } from "../components/CreateTodos";
 import { Todo } from "../components/Todo";
 import { Posts } from "./Posts";
 
-import { useContext } from "react";
-import { TodosContext } from "../context/TodosContext";
+import { useContext, useSyncExternalStore } from "react";
 import { SystemContext } from "../context/SystemContext";
+import { todoStore } from "../store/todoStore";
+
 
 export function Index() {
-  const { todos } = useContext(TodosContext);
+  const todos = useSyncExternalStore(todoStore.subscribe, todoStore.getSnapShot);
   const { isDarkMode, isPostsPage } = useContext(SystemContext)
 
   if(isPostsPage) {

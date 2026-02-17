@@ -2,9 +2,13 @@ import { useContext, useRef, useState } from "react";
 import { TodosContext } from "../context/TodosContext";
 import { SystemContext } from "../context/SystemContext";
 
+import { todoStore } from "../store/todoStore";
+
 export function CreateTodos() {
   const { addTodo } = useContext(TodosContext);
   const { isDarkMode } = useContext(SystemContext);
+
+
 
   const todoId = useRef(1);
   const titleValue = useRef("");
@@ -27,7 +31,7 @@ export function CreateTodos() {
   function handleSubmit(ev) {
     ev.preventDefault();
     if (todo.title && todo.priority) {
-      addTodo(todo);
+      todoStore.addTodo(todo);
     }
 
     todoId.current += 1;
